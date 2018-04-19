@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="kot.slimmer.fabioapp.Booking.NewBooking">
+
+    <EditText
+        android:id="@+id/name"
+        android:hint="Nome..."
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/dateButtonGroup"
+        android:layout_below="@+id/name"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="Data"
+            android:id="@+id/datePicker"
+            android:padding="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:text="Orario"
+            android:id="@+id/timePicker"
+            android:padding="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/bookingRc"
+        android:layout_below="@id/dateButtonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.FloatingActionButton
+        app:fabSize="normal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="Conferma"
+        android:id="@+id/submit"
+        android:padding="16dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/colorAccent"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

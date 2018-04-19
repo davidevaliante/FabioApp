@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "226342325149",
+    "firebase_url": "https://fabio-2e829.firebaseio.com",
+    "project_id": "fabio-2e829",
+    "storage_bucket": "fabio-2e829.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226342325149:android:fcb80e996aa42f1c",
+        "android_client_info": {
+          "package_name": "kot.slimmer.fabioapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226342325149-5n253t5jdiob9mml4c8dfip58rh94eue.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kot.slimmer.fabioapp",
+            "certificate_hash": "a1e9477f61e90e445221d463c5c9722b1b295251"
+          }
+        },
+        {
+          "client_id": "226342325149-godcjfj83sk4ee2emr580mad6qlojcv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3VHfvALF3enMai2dJkKR6D3-MmqpsB2c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "226342325149-godcjfj83sk4ee2emr580mad6qlojcv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
