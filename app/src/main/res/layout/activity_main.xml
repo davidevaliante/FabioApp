@@ -5,37 +5,148 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:animateLayoutChanges="true"
+    android:id="@+id/mainActivityRoot"
+    android:background="@drawable/bg_cropped_minified"
     tools:context="kot.slimmer.fabioapp.MainActivity">
 
-    <TextView
-        android:id="@+id/logout"
-        android:padding="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log Out"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/booking"
-        android:text="Booking"
-        android:textColor="@color/white"
-        android:background="@color/colorPrimary"
-        android:padding="16dp"
+    <LinearLayout
+        android:id="@+id/cardsGroup"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/newBooking"
-        android:layout_marginTop="16dp"
-        android:text="New Booking"
-        android:textColor="@color/white"
-        android:background="@color/colorPrimary"
-        android:padding="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <android.support.v7.widget.CardView
+            android:id="@+id/cutCard"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/cutsCardImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.75" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/main_gradient" />
+
+                <TextView
+                    fontPath="fonts/raleway_regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="0.25"
+                    android:gravity="center_vertical"
+                    android:text="Tagli"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:ignore="MissingPrefix" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/bookingCard"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/bookingCardImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.75" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/main_gradient" />
+
+                <TextView
+                    fontPath="fonts/raleway_regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="0.25"
+                    android:gravity="center_vertical"
+                    android:text="Prenota"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:ignore="MissingPrefix" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/contactsCard"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/contactsCardImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.75" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@drawable/main_gradient" />
+
+                <TextView
+                    fontPath="fonts/raleway_regular.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="0.25"
+                    android:gravity="center_vertical"
+                    android:text="Contatti"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    tools:ignore="MissingPrefix" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
 
 
+    </LinearLayout>
 </LinearLayout>

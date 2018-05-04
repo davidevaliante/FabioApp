@@ -1,27 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_cropped_minified"
+    tools:ignore="MissingPrefix"
+    android:id="@+id/root"
+    android:animateLayoutChanges="true"
     tools:context="kot.slimmer.fabioapp.SplashScreen">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="172dp"
-        android:padding="16dp"
-        android:text="SPLASH SCREEN"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+    <LinearLayout
+        android:animateLayoutChanges="true"
+        android:id="@+id/logoGroup"
+        android:layout_marginTop="160dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/logoName"
+            android:text="Fabio"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textSize="100sp"
+            android:visibility="invisible"
+            android:padding="16dp"
+            fontPath="fonts/shoguns_clan.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
+
+        <View
+            android:id="@+id/topLine"
+            android:background="@drawable/main_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+        <TextView
+            android:id="@+id/logoSubname"
+            android:text="Barber Shop"
+            android:textColor="@color/white"
+            fontPath="fonts/satisfy_regular.ttf"
+            android:textSize="26sp"
+            android:padding="16dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/bottomLine"
+            android:background="@drawable/reverse_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/icons_group"
+        android:animateLayoutChanges="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/logoGroup"
+        android:orientation="horizontal"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/instagram_logo"
+            app:srcCompat="@drawable/ic_instagram_"
+            android:layout_alignParentStart="true"
+            android:visibility="gone"
+            android:layout_margin="16dp"
+            android:layout_marginStart="46dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:id="@+id/ifacebook_logo"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_fb"
+            android:layout_margin="16dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <ImageView
+            android:id="@+id/snapchat_logo"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+            app:srcCompat="@drawable/snapchat_vector"
+            android:layout_margin="16dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
