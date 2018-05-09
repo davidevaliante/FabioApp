@@ -51,6 +51,16 @@ fun Long.toDate() : String{
     return type.format(this)
 }
 
+fun Float.toDPI(ctx : Context):Int{
+    val pixels = this * ctx.resources.displayMetrics.density
+    return pixels.toInt()
+}
+
+fun Long.toSmallDate() : String{
+    val type = SimpleDateFormat("d MMM")
+    return type.format(this)
+}
+
 inline fun <reified T : Activity> AppCompatActivity.goToPage(bundle : Bundle? = null ){
     val intent = Intent(this, T::class.java)
     if(bundle == null) startActivity(intent) else startActivity(intent, bundle)

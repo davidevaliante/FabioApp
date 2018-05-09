@@ -4,19 +4,12 @@ import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.support.v4.view.animation.FastOutLinearInInterpolator
 import android.support.v4.view.animation.FastOutSlowInInterpolator
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationSet
-import android.view.animation.BounceInterpolator
 import com.bumptech.glide.Glide
-import com.google.firebase.auth.FirebaseAuth
 import com.transitionseverywhere.*
-import jp.wasabeef.recyclerview.animators.FadeInAnimator
-import kot.slimmer.fabioapp.Booking.Booking
-import kot.slimmer.fabioapp.Booking.NewBooking
 import kotlinx.android.synthetic.main.activity_main.*
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper
 
@@ -26,13 +19,34 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Glide.with(this).load("http://static.fashionbeans.com/wp-content/uploads/2018/02/dropfadesimg-4.jpg")
-                .into(cutsCardImg)
-        Glide.with(this).load("http://static.fashionbeans.com/wp-content/uploads/2018/02/dropfadesimg-4.jpg")
-                .into(bookingCardImg)
-        Glide.with(this).load("http://static.fashionbeans.com/wp-content/uploads/2018/02/dropfadesimg-4.jpg")
-                .into(contactsCardImg)
+        loadCardImage()
+        cardsSlideIn()
+        iconsFadeIn()
+        gradientFadeIn()
 
+        cutCard.setOnClickListener {
+            goToPage<PicturesActivity>()
+        }
+        bookingCard.setOnClickListener {
+
+        }
+        contactsCard.setOnClickListener {
+
+        }
+
+    }
+
+    private fun loadCardImage(){
+        Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/fabio-2e829.appspot.com/o/Static%2Fthe-old-city-barber-shop-in-black-and-white-greg-mimbs.jpg?alt=media&token=02c488fa-222c-4f30-a135-42a35a055926")
+                .into(cutsCardImg)
+        Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/fabio-2e829.appspot.com/o/Static%2F25025811_1924081504507766_9041834734304362496_n.jpg?alt=media&token=c279b47b-52e5-445b-9658-6cea6b491a87")
+                .into(aboutImg)
+
+
+    }
+
+    // tot duration 850ms
+    private fun cardsSlideIn(){
         Handler().postDelayed({
             val slide = Slide(Gravity.RIGHT)
             slide.duration = 250
@@ -67,7 +81,70 @@ class MainActivity : AppCompatActivity() {
 
         },600)
 
+    }
 
+    private fun gradientFadeIn(){
+        Handler().postDelayed({
+            var nameAnim : com.transitionseverywhere.Transition = com.transitionseverywhere.AutoTransition()
+            //quanto deve durare la transizione
+            nameAnim.duration = 2400
+            //interpolatore
+            var interpolator = FastOutSlowInInterpolator()
+            nameAnim.interpolator = interpolator
+
+            val vg = mainActivityRoot as ViewGroup
+
+            com.transitionseverywhere.TransitionManager.beginDelayedTransition(vg,nameAnim)
+
+            icons_bg.visibility = View.VISIBLE
+        },500)
+    }
+
+    private fun iconsFadeIn(){
+        Handler().postDelayed({
+            var nameAnim : com.transitionseverywhere.Transition = com.transitionseverywhere.AutoTransition()
+            //quanto deve durare la transizione
+            nameAnim.duration = 700
+            //interpolatore
+            var interpolator = FastOutSlowInInterpolator()
+            nameAnim.interpolator = interpolator
+
+            val vg = mainActivityRoot as ViewGroup
+
+            com.transitionseverywhere.TransitionManager.beginDelayedTransition(vg,nameAnim)
+
+            appBooking.visibility = View.VISIBLE
+        },850)
+
+        Handler().postDelayed({
+            var nameAnim : com.transitionseverywhere.Transition = com.transitionseverywhere.AutoTransition()
+            //quanto deve durare la transizione
+            nameAnim.duration = 700
+            //interpolatore
+            var interpolator = FastOutSlowInInterpolator()
+            nameAnim.interpolator = interpolator
+
+            val vg = mainActivityRoot as ViewGroup
+
+            com.transitionseverywhere.TransitionManager.beginDelayedTransition(vg,nameAnim)
+
+            whatsappBooking.visibility = View.VISIBLE
+        },1050)
+
+        Handler().postDelayed({
+            var nameAnim : com.transitionseverywhere.Transition = com.transitionseverywhere.AutoTransition()
+            //quanto deve durare la transizione
+            nameAnim.duration = 700
+            //interpolatore
+            var interpolator = FastOutSlowInInterpolator()
+            nameAnim.interpolator = interpolator
+
+            val vg = mainActivityRoot as ViewGroup
+
+            com.transitionseverywhere.TransitionManager.beginDelayedTransition(vg,nameAnim)
+
+            phoneBooking.visibility = View.VISIBLE
+        },1250)
     }
 
     override fun attachBaseContext(newBase: Context) {

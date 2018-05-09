@@ -20,3 +20,8 @@ data class Cut(var name : String? = null,
 data class TimeInterval(var start : Cut? = null,
                         var end : Cut? = null)
 
+data class CutPicture(var path:String?= null,
+                      var time: Long ?= null,
+                      var title:String?=null,
+                      var hashTags:String?=null)
+

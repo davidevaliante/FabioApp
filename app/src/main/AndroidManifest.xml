@@ -20,7 +20,8 @@
         </activity>
         <activity android:name=".auth.Auth" />
         <activity android:name=".Booking.Booking" />
-        <activity android:name=".Booking.NewBooking"></activity>
+        <activity android:name=".Booking.NewBooking" />
+        <activity android:name=".PicturesActivity"></activity>
     </application>
 
 </manifest>

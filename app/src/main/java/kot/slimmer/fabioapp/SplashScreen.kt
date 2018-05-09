@@ -44,6 +44,7 @@ class SplashScreen : AppCompatActivity() {
         Handler().postDelayed({
             if(fireAuth.currentUser != null){
                 goToPage<MainActivity>()
+                finish()
             }else{
                 goToPage<Auth>()
             }
